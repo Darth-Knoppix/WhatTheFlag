@@ -11,7 +11,10 @@ import SwiftUI
 struct WhatTheFlagApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                QuizView().tabItem { Label("Quiz", systemImage: "person") }
+                CountryReferenceView().tabItem { Label("Countries", systemImage: "person") }
+            }
         }
     }
 }

@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC2FF596265CDEF7006CE0C9 /* CountryReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FF595265CDEF7006CE0C9 /* CountryReferenceView.swift */; };
+		DC2FF598265CDF0B006CE0C9 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2FF597265CDF0B006CE0C9 /* Country.swift */; };
 		DC8E6525265C281E00F2AF00 /* WhatTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E6524265C281E00F2AF00 /* WhatTheFlagApp.swift */; };
-		DC8E6527265C281E00F2AF00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E6526265C281E00F2AF00 /* ContentView.swift */; };
+		DC8E6527265C281E00F2AF00 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E6526265C281E00F2AF00 /* QuizView.swift */; };
 		DC8E6529265C281E00F2AF00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8E6528265C281E00F2AF00 /* Assets.xcassets */; };
 		DC8E652C265C281E00F2AF00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC8E652B265C281E00F2AF00 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC2FF595265CDEF7006CE0C9 /* CountryReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryReferenceView.swift; sourceTree = "<group>"; };
+		DC2FF597265CDF0B006CE0C9 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		DC8E6521265C281D00F2AF00 /* WhatTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC8E6524265C281E00F2AF00 /* WhatTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTheFlagApp.swift; sourceTree = "<group>"; };
-		DC8E6526265C281E00F2AF00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC8E6526265C281E00F2AF00 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		DC8E6528265C281E00F2AF00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC8E652B265C281E00F2AF00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC8E652D265C281E00F2AF00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +37,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC2FF599265CE080006CE0C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC2FF595265CDEF7006CE0C9 /* CountryReferenceView.swift */,
+				DC8E6526265C281E00F2AF00 /* QuizView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC2FF59A265CE090006CE0C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC2FF597265CDF0B006CE0C9 /* Country.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DC8E6518265C281D00F2AF00 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +73,9 @@
 		DC8E6523265C281D00F2AF00 /* WhatTheFlag */ = {
 			isa = PBXGroup;
 			children = (
+				DC2FF59A265CE090006CE0C9 /* Models */,
+				DC2FF599265CE080006CE0C9 /* Views */,
 				DC8E6524265C281E00F2AF00 /* WhatTheFlagApp.swift */,
-				DC8E6526265C281E00F2AF00 /* ContentView.swift */,
 				DC8E6528265C281E00F2AF00 /* Assets.xcassets */,
 				DC8E652D265C281E00F2AF00 /* Info.plist */,
 				DC8E652A265C281E00F2AF00 /* Preview Content */,
@@ -138,8 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC8E6527265C281E00F2AF00 /* ContentView.swift in Sources */,
+				DC2FF598265CDF0B006CE0C9 /* Country.swift in Sources */,
+				DC8E6527265C281E00F2AF00 /* QuizView.swift in Sources */,
 				DC8E6525265C281E00F2AF00 /* WhatTheFlagApp.swift in Sources */,
+				DC2FF596265CDEF7006CE0C9 /* CountryReferenceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,5 +18,6 @@ To get a better understanding of modern iOS development, expand my knowledge and
 
 ## Additional features
 
+[x] Animation
 [] Scoreboard
 [] i18n

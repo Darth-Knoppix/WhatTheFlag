@@ -17,7 +17,7 @@ enum GameState {
 struct CountryChoice: Identifiable, Hashable {
     let id: String
     var flag: String {
-        return Country.flag(for: self.id)
+        return Country.flag(for: id)
     }
 }
 
@@ -29,29 +29,29 @@ struct QuizView: View {
     @State private var userChosenAnswerCode: String?
     @State private var numOfQuestionsAttempted: Int = 0
     @State private var canUserChoose: Bool = false
-    
+
     func newQuestion() {
         canUserChoose = true
-        countries = Array(Country.countries.shuffled()[0 ..< 4]).map({ CountryChoice(id: $0)})
+        countries = Array(Country.countries.shuffled()[0 ..< 4]).map { CountryChoice(id: $0) }
         correctAnswerCode = countries.shuffled().first!.id
     }
-    
+
     func newGame() {
         gameState = .started
         gameScore = 0
         numOfQuestionsAttempted = 0
-        self.newQuestion()
+        newQuestion()
     }
-    
+
     func choose(_ country: CountryChoice) {
         userChosenAnswerCode = country.id
         numOfQuestionsAttempted += 1
         if country.id == correctAnswerCode {
             gameScore += 1
         }
-        
+
         canUserChoose = false
-        
+
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
             userChosenAnswerCode = nil
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
@@ -59,7 +59,7 @@ struct QuizView: View {
             }
         }
     }
-    
+
     func flagHighlight(when isShowing: Bool, and isCorrect: Bool) -> Color {
         switch (isShowing, isCorrect) {
         case (true, true):
@@ -83,7 +83,7 @@ struct QuizView: View {
             return CGSize(width: 1.0, height: 1.0)
         }
     }
-    
+
     var score: some View {
         ZStack {
             Circle()
@@ -93,13 +93,13 @@ struct QuizView: View {
                 .foregroundColor(.white)
         }
     }
-    
+
     var body: some View {
         VStack {
             if gameState == GameState.started {
                 score
             }
-        
+
             VStack(alignment: .center, spacing: 20) {
                 if gameState == GameState.started {
                     Text("Which flag belongs to \(Country.name(for: correctAnswerCode!))?")
@@ -111,8 +111,7 @@ struct QuizView: View {
                         let didChooseCorrectly = isShowingAnswer && correctAnswerCode == userChosenAnswerCode
                         let highlighColor = flagHighlight(when: isShowingAnswer, and: isCorrect)
                         let flagSize = flagScale(when: isShowingAnswer, and: isCorrect, for: didChooseCorrectly)
-                        
-                        
+
                         Text(country.flag)
                             .font(.system(size: 72.0))
                             .onTapGesture {
